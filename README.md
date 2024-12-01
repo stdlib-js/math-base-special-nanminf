@@ -45,32 +45,38 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/math-base-special-nanminf
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
--   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var nanminf = require( '@stdlib/math-base-special-nanminf' );
+nanminf = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-nanminf@umd/browser.js' )
+```
+
+To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+
+```javascript
+var nanminf = require( 'path/to/vendor/umd/math-base-special-nanminf/index.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-nanminf@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.nanminf;
+})();
+</script>
 ```
 
 #### nanminf( x, y )
@@ -122,8 +128,13 @@ var v = nanminf( NaN, NaN );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var nanminf = require( '@stdlib/math-base-special-nanminf' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-nanminf@umd/browser.js"></script>
+<script type="text/javascript">
+(function () {
 
 var m = nanminf( 3.0, 4.0 );
 console.log( m );
@@ -140,6 +151,11 @@ console.log( m );
 m = nanminf( NaN, NaN );
 console.log( m );
 // => NaN
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -148,93 +164,7 @@ console.log( m );
 
 <!-- C interface documentation. -->
 
-* * *
 
-<section class="c">
-
-## C APIs
-
-<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
-
-<section class="intro">
-
-</section>
-
-<!-- /.intro -->
-
-<!-- C usage documentation. -->
-
-<section class="usage">
-
-### Usage
-
-```c
-#include "stdlib/math/base/special/nanminf.h"
-```
-
-#### stdlib_base_nanminf( x, y )
-
-Returns the minimum value of two single-precision floating-point numbers, ignoring NaN.
-
-```c
-float out = stdlib_base_nanminf( 4.2f, 3.14f );
-// returns 3.14f
-
-out = stdlib_base_nanminf( 4.14f, 0.0f / 0.0f );
-// returns 4.14f
-```
-
-The function accepts the following arguments:
-
--   **x**: `[in] float` input value.
--   **y**: `[in] float` input value.
-
-```c
-float stdlib_base_nanminf( const float x, const float y );
-```
-
-</section>
-
-<!-- /.usage -->
-
-<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
-
-<section class="notes">
-
-</section>
-
-<!-- /.notes -->
-
-<!-- C API usage examples. -->
-
-<section class="examples">
-
-### Examples
-
-```c
-#include "stdlib/math/base/special/nanminf.h"
-#include <stdio.h>
-
-int main( void ) {
-    const float x[] = { 1.0f, 0.45f, -0.89f, 0.0f / 0.0f, -0.78f, -0.22f, 0.66f, 0.11f, -0.55f, 0.0f };
-    const float y[] = { -0.22f, 0.66f, 0.0f, -0.55f, 0.33f, 1.0f, 0.0f / 0.0f, 0.11f, 0.45f, -0.78f };
-
-    float v;
-    int i;
-    for ( i = 0; i < 10; i++ ) {
-        v = stdlib_base_nanminf( x[ i ], y[ i ] );
-        printf( "x[ %d ]: %f, y[ %d ]: %f, nanminf( x[ %d ], y[ %d ] ): %f\n", i, x[ i ], i, y[ i ], i, i, v );
-    }
-}
-```
-
-</section>
-
-<!-- /.examples -->
-
-</section>
-
-<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
