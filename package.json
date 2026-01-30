@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/math-base-special-nanminf",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Return the minimum value of two single-precision floating-point numbers, ignoring NaN.",
   "license": "Apache-2.0",
   "author": {
@@ -41,9 +41,9 @@
   },
   "dependencies": {
     "@stdlib/math-base-assert-is-nanf": "^0.2.2",
-    "@stdlib/math-base-napi-binary": "^0.3.0",
+    "@stdlib/math-base-napi-binary": "^0.3.1",
     "@stdlib/math-base-special-minf": "github:stdlib-js/math-base-special-minf#main",
-    "@stdlib/utils-library-manifest": "^0.2.2"
+    "@stdlib/utils-library-manifest": "^0.2.3"
   },
   "devDependencies": {
     "@stdlib/number-float64-base-to-float32": "^0.2.2",
