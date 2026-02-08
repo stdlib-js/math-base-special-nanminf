@@ -52,7 +52,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import nanminf from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-nanminf@deno/mod.js';
+import nanminf from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-nanminf@v0.1.1-deno/mod.js';
 ```
 
 #### nanminf( x, y )
@@ -105,7 +105,7 @@ var v = nanminf( NaN, NaN );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import nanminf from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-nanminf@deno/mod.js';
+import nanminf from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-nanminf@v0.1.1-deno/mod.js';
 
 var m = nanminf( 3.0, 4.0 );
 console.log( m );
